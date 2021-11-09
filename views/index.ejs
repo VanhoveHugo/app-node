@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Node</title>
+    <link rel="stylesheet" href="/styles/index.css">
+</head>
+<body class="flex flex-col items-center text-center">
+    <h1 class="text-4xl font-bold text-center">API Node</h1>
+    <br>
+    <h2 class="text-3xl font-bold text-center">Utilisateurs</h2>
+    <form method="post" action="/users" class="bg-gray-200 p-2 flex flex-col">
+        <input type="text" name="name" placeholder="Pseudo" class="m-1">
+        <input type="password" name="password" placeholder="Mot de passe" class="m-1">
+        <button type="submit" class="bg-gray-500">Valider</button>
+    </form>
+    <ul>
+        <% users.forEach((e) => { %>
+            <li><%= e.name %></li>
+        <% }) %>
+    </ul>
+    <h2 class="text-3xl font-bold text-center">Commentaires</h2>
+    <form method="post" action="/comments" class="bg-gray-200 p-2 flex flex-col">
+        <input type="text" name="text" placeholder="Contenu" class="m-1">
+        <button type="submit" class="bg-gray-500">Valider</button>
+    </form>
+    <ul>
+        <% comments.forEach((e) => { %>
+            <li>
+                <p><%= e.text %></p>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>
